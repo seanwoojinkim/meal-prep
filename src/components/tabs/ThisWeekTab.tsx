@@ -30,14 +30,14 @@ export function ThisWeekTab({ meals: initialMeals }: ThisWeekTabProps) {
     <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
       {/* Header */}
       <div className="mb-8 grid grid-cols-[80px_1fr] md:grid-cols-[140px_1fr] gap-4 md:gap-8 items-center">
-        <div className="rounded-xl overflow-hidden">
+        <div className="rounded-xl overflow-hidden stagger-1">
           <img
             src="/meal.png"
             alt="Meal"
             className="w-full h-auto object-contain"
           />
         </div>
-        <div>
+        <div className="stagger-2">
           <h1 className="mb-4">This Week's Meals</h1>
           <p className="text-muted-foreground">
             Seven meals from Sunday through Saturday using your prep components. Most meals take 10-20 minutes to assemble.

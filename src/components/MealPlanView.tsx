@@ -97,11 +97,13 @@ export function MealPlanView({ plan }: MealPlanViewProps) {
 
       {/* Tab Content */}
       <div className="min-h-[calc(100vh-64px)]">
-        {activeTab === 'overview' && <OverviewTab plan={plan} />}
-        {activeTab === 'shopping' && <ShoppingListTab items={plan.shoppingList} />}
-        {activeTab === 'prep' && <SundayPrepTab steps={plan.prepSteps} />}
-        {activeTab === 'week' && <ThisWeekTab meals={plan.weekMeals} />}
-        {activeTab === 'notes' && <NotesTab notes={plan.notes} />}
+        <div key={activeTab} className="page-transition">
+          {activeTab === 'overview' && <OverviewTab plan={plan} />}
+          {activeTab === 'shopping' && <ShoppingListTab items={plan.shoppingList} />}
+          {activeTab === 'prep' && <SundayPrepTab steps={plan.prepSteps} />}
+          {activeTab === 'week' && <ThisWeekTab meals={plan.weekMeals} />}
+          {activeTab === 'notes' && <NotesTab notes={plan.notes} />}
+        </div>
       </div>
 
       {/* Hide scrollbar on tab navigation */}

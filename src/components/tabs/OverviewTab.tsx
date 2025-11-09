@@ -17,14 +17,14 @@ export function OverviewTab({ plan }: OverviewTabProps) {
     <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
       {/* Week Header */}
       <div className="mb-12 grid md:grid-cols-2 gap-8 items-center">
-        <div className="rounded-xl overflow-hidden h-full">
+        <div className="rounded-xl overflow-hidden h-full stagger-1">
           <img
             src="/food.png"
             alt="Meal prep ingredients"
             className="w-full h-full object-cover"
           />
         </div>
-        <div>
+        <div className="stagger-2">
           <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full mb-4">
             {formatDateRange(plan.weekStart, plan.weekEnd)}
           </div>
