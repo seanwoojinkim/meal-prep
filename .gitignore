@@ -90,3 +90,4 @@ temp
 # Claude Code workflow - keep directory structure but ignore documents
 thoughts/**/*.md
 !thoughts/**/.gitkeep
+.vercel
