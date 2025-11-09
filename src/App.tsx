@@ -14,11 +14,12 @@ export default function App() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-accent/10 px-4">
       <div className="max-w-2xl text-center">
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-primary/10">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="4" y="6" width="24" height="20" rx="2" />
-              <path d="M4 12h24M12 6v6M20 6v6" />
-            </svg>
+          <div className="inline-flex items-center justify-center mb-6">
+            <img
+              src="/lp.png"
+              alt="Meal prep illustration"
+              className="w-32 h-32 md:w-40 md:h-40 rounded-2xl"
+            />
           </div>
           <h1 className="mb-4">Sunday Meal Prep</h1>
           <p className="text-muted-foreground mb-8">
