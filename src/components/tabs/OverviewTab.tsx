@@ -14,16 +14,25 @@ export function OverviewTab({ plan }: OverviewTabProps) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
+    <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
       {/* Week Header */}
-      <div className="mb-12">
-        <div className="text-muted-foreground mb-2">
-          {formatDateRange(plan.weekStart, plan.weekEnd)}
+      <div className="mb-12 grid md:grid-cols-2 gap-8 items-center">
+        <div className="rounded-xl overflow-hidden h-full">
+          <img
+            src="/food.png"
+            alt="Meal prep ingredients"
+            className="w-full h-full object-cover"
+          />
         </div>
-        <h1 className="mb-4">This Week's Plan</h1>
-        <p className="text-muted-foreground max-w-2xl">
-          {plan.philosophy}
-        </p>
+        <div>
+          <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full mb-4">
+            {formatDateRange(plan.weekStart, plan.weekEnd)}
+          </div>
+          <h1 className="mb-4">This Week's Plan</h1>
+          <p className="text-muted-foreground">
+            {plan.philosophy}
+          </p>
+        </div>
       </div>
 
       {/* Sunday Spotlight */}

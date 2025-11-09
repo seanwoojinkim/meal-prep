@@ -71,22 +71,31 @@ export function SundayPrepTab({ steps: initialSteps }: SundayPrepTabProps) {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
       {/* Header */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-3">
-          <h1>Sunday Prep Timeline</h1>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <div className="w-2 h-2 rounded-full bg-primary" />
-            <span>{completedCount}/{steps.length}</span>
-          </div>
-        </div>
-        <p className="text-muted-foreground mb-4">
-          Follow these {steps.length} steps to prep your week. Total time: ~2 hours 15 minutes.
-        </p>
-        <div className="h-2 bg-accent rounded-full overflow-hidden">
-          <div 
-            className="h-full bg-primary transition-all duration-300"
-            style={{ width: `${(completedCount / steps.length) * 100}%` }}
+      <div className="mb-6 grid grid-cols-[80px_1fr] md:grid-cols-[140px_1fr] gap-4 md:gap-8 items-center">
+        <div className="rounded-xl overflow-hidden">
+          <img
+            src="/prep.png"
+            alt="Prep"
+            className="w-full h-auto object-contain"
           />
+        </div>
+        <div>
+          <div className="flex items-center justify-between mb-3">
+            <h1>Sunday Prep Timeline</h1>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <div className="w-2 h-2 rounded-full bg-primary" />
+              <span>{completedCount}/{steps.length}</span>
+            </div>
+          </div>
+          <p className="text-muted-foreground mb-4">
+            Follow these {steps.length} steps to prep your week. Total time: ~2 hours 15 minutes.
+          </p>
+          <div className="relative h-3 bg-muted rounded-full overflow-hidden">
+            <div
+              className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-primary/80 rounded-full transition-all duration-500 ease-out"
+              style={{ width: `${(completedCount / steps.length) * 100}%` }}
+            />
+          </div>
         </div>
       </div>
 

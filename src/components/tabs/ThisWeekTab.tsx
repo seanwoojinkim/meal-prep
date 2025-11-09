@@ -6,7 +6,7 @@ interface ThisWeekTabProps {
 }
 
 export function ThisWeekTab({ meals: initialMeals }: ThisWeekTabProps) {
-  const [meals, setMeals] = useState<WeekMeal[]>(initialMeals);
+  const [meals] = useState<WeekMeal[]>(initialMeals);
   const [collapsedMeals, setCollapsedMeals] = useState<Set<string>>(new Set());
 
   const toggleCollapse = (id: string) => {
@@ -29,11 +29,20 @@ export function ThisWeekTab({ meals: initialMeals }: ThisWeekTabProps) {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
       {/* Header */}
-      <div className="mb-6">
-        <h1 className="mb-3">This Week's Meals</h1>
-        <p className="text-muted-foreground">
-          Seven meals from Sunday through Saturday using your prep components. Most meals take 10-20 minutes to assemble.
-        </p>
+      <div className="mb-8 grid grid-cols-[80px_1fr] md:grid-cols-[140px_1fr] gap-4 md:gap-8 items-center">
+        <div className="rounded-xl overflow-hidden">
+          <img
+            src="/meal.png"
+            alt="Meal"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+        <div>
+          <h1 className="mb-4">This Week's Meals</h1>
+          <p className="text-muted-foreground">
+            Seven meals from Sunday through Saturday using your prep components. Most meals take 10-20 minutes to assemble.
+          </p>
+        </div>
       </div>
 
       {/* Meals List */}

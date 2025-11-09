@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingItem } from '../../types';
 
 interface ShoppingListTabProps {
@@ -6,7 +6,7 @@ interface ShoppingListTabProps {
 }
 
 // Category icon mapping
-const categoryIcons: Record<string, JSX.Element> = {
+const categoryIcons: Record<string, React.JSX.Element> = {
   'Produce': (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
       <path d="M10 3v4M10 3c-1.5 0-2 1-2 2h4c0-1-0.5-2-2-2z" />
@@ -95,21 +95,38 @@ export function ShoppingListTab({ items: initialItems }: ShoppingListTabProps) {
   const checkedItems = items.filter(i => i.checked).length;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
+    <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
       {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <h1>Shopping List</h1>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <div className="w-2 h-2 rounded-full bg-primary" />
-            <span>{checkedItems}/{totalItems}</span>
+      <div className="mb-8 grid grid-cols-[80px_1fr] md:grid-cols-[140px_1fr] gap-4 md:gap-8 items-center">
+        <div className="rounded-xl overflow-hidden">
+          <img
+            src="/shopping-cart.png"
+            alt="Shopping cart"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+        <div>
+          <div className="flex items-center justify-between mb-4">
+            <h1>Shopping List</h1>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <div className="w-2 h-2 rounded-full bg-primary" />
+              <span>{checkedItems}/{totalItems}</span>
+            </div>
+          </div>
+          <p className="text-muted-foreground mb-4">
+            Everything you need for this week's meal prep. Check items off as you shop.
+          </p>
+          <div className="relative h-3 bg-muted rounded-full overflow-hidden">
+            <div
+              className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-primary/80 rounded-full transition-all duration-500 ease-out"
+              style={{ width: `${(checkedItems / totalItems) * 100}%` }}
+            />
           </div>
         </div>
-        <p className="text-muted-foreground mb-6">
-          Everything you need for this week's meal prep. Check items off as you shop.
-        </p>
+      </div>
 
-        {/* Search Bar */}
+      {/* Search Bar */}
+      <div className="mb-8">
         <div className="relative">
           <svg 
             className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
@@ -214,22 +231,6 @@ export function ShoppingListTab({ items: initialItems }: ShoppingListTabProps) {
           <p className="text-muted-foreground">
             Try adjusting your search or clear filters
           </p>
-        </div>
-      )}
-
-      {/* Progress Summary */}
-      {filteredItems.length > 0 && (
-        <div className="mt-8 p-5 bg-card border border-border rounded-xl">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-muted-foreground">Shopping Progress</span>
-            <span>{Math.round((checkedItems / totalItems) * 100)}%</span>
-          </div>
-          <div className="h-2 bg-accent rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-primary transition-all duration-300"
-              style={{ width: `${(checkedItems / totalItems) * 100}%` }}
-            />
-          </div>
         </div>
       )}
     </div>

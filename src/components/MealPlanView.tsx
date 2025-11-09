@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MealPlan } from '../types';
 import { OverviewTab } from './tabs/OverviewTab';
 import { ShoppingListTab } from './tabs/ShoppingListTab';
@@ -12,7 +12,7 @@ interface MealPlanViewProps {
 
 type TabId = 'overview' | 'shopping' | 'prep' | 'week' | 'notes';
 
-const tabs: { id: TabId; label: string; icon: JSX.Element }[] = [
+const tabs: { id: TabId; label: string; icon: React.JSX.Element }[] = [
   {
     id: 'overview',
     label: 'Overview',

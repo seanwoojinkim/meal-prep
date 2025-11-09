@@ -6,13 +6,22 @@ interface NotesTabProps {
 
 export function NotesTab({ notes }: NotesTabProps) {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 md:px-6 md:py-12">
-      <div className="mb-8">
-        <h1 className="mb-3">Notes & Tips</h1>
-        <p className="text-muted-foreground">
-          Additional strategies, storage recommendations, and ideas for getting the most 
-          out of your meal prep.
-        </p>
+    <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
+      <div className="mb-8 grid grid-cols-[80px_1fr] md:grid-cols-[140px_1fr] gap-4 md:gap-8 items-center">
+        <div className="rounded-xl overflow-hidden">
+          <img
+            src="/notes.png"
+            alt="Notes"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+        <div>
+          <h1 className="mb-3">Notes & Tips</h1>
+          <p className="text-muted-foreground">
+            Additional strategies, storage recommendations, and ideas for getting the most
+            out of your meal prep.
+          </p>
+        </div>
       </div>
 
       <div className="space-y-6">
