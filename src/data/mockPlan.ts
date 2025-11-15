@@ -4,7 +4,7 @@ export const mockPlan: MealPlan = {
   id: 'mock-plan-nov-2025-wk2',
   weekStart: '2025-11-18',
   weekEnd: '2025-11-24',
-  philosophy: "This week centers around farro as your primary grain, creating a cohesive base for multiple meals while minimizing ingredient overlap. You'll prep three core component systems: Farro + Mushroom Base (from Farro with Mushrooms recipe) - earthy, rich foundation; Marinated Tofu (from Bibimbap) - versatile protein for bowls and stir-fries; Miso Butter (from Gnocchi recipe) - flavor bomb that works with everything. The philosophy: cook farro once in quantity, prep vegetables and proteins Sunday afternoon, then spend 10-15 minutes assembling dinners through the week. Since asparagus is imported and expensive right now, we'll use green beans and broccolini as seasonal alternatives that work perfectly with the miso butter.",
+  philosophy: "This week centers around farro as your primary grain, creating a cohesive base for multiple meals while minimizing ingredient overlap. You'll prep three core component systems: Two farro batches - one richly flavored with mushrooms/wine (for Sunday dinner), one plain (neutral base for bowls); Marinated Tofu (from Bibimbap) - versatile protein for bowls and stir-fries; Miso Butter (from Gnocchi recipe) - flavor bomb that works with everything. The philosophy: cook both farro batches in parallel Sunday afternoon, prep vegetables and proteins, then spend 10-15 minutes assembling dinners through the week. Since asparagus is imported and expensive right now, we'll use green beans and broccolini as seasonal alternatives that work perfectly with the miso butter.",
   spotlightDish: {
     name: 'Farro with Mushrooms',
     description: 'Sunday dinner showcases earthy, rich farro cooked risotto-style with dried porcini and fresh cremini mushrooms, finished with Parmesan and fresh herbs. This is your reward for the prep work.',
@@ -12,8 +12,13 @@ export const mockPlan: MealPlan = {
   },
   components: [
     {
-      name: 'Cooked Farro',
-      description: '4-5 cups cooked farro - your grain base for the week',
+      name: 'Plain Cooked Farro',
+      description: '~6 cups plain cooked farro - neutral base for bibimbap, crispy grain dish, miso butter bowls',
+      storage: 'Large airtight container, refrigerate 5 days'
+    },
+    {
+      name: 'Mushroom Cooked Farro',
+      description: '~4.5 cups richly flavored farro with wine, porcini, rosemary - for Sunday dinner and Italian-style bowls',
       storage: 'Large airtight container, refrigerate 5 days'
     },
     {
@@ -82,7 +87,7 @@ export const mockPlan: MealPlan = {
     { id: 'prod-16', name: '2 limes or lemons', quantity: 'for cucumber salad', category: 'Produce', checked: false },
 
     // Grains & Legumes
-    { id: 'grain-1', name: '3 cups farro', quantity: 'cook extra for multiple uses - buy 1 lb bag', category: 'Pantry', checked: false },
+    { id: 'grain-1', name: '3.5 cups farro total', quantity: '1.5 cups for mushroom recipe, 2 cups for plain batch - buy 1 lb bag', category: 'Pantry', checked: false },
     { id: 'grain-2', name: '1 (15-oz) can chickpeas', quantity: '', category: 'Pantry', checked: false },
     { id: 'grain-3', name: '1 (16-18 oz) package shelf-stable potato gnocchi', quantity: '', category: 'Pantry', checked: false },
 
@@ -120,13 +125,15 @@ export const mockPlan: MealPlan = {
       title: '1:45 PM - PREP START - Initial Soaking',
       duration: '5 min',
       ingredients: [
-        '3 cups farro',
+        '1.5 cups farro (for mushroom recipe)',
+        '2 cups farro (for plain batch)',
         '½ oz dried porcini mushrooms (½ cup)',
         '2 cups boiling water'
       ],
-      equipment: ['Large bowl', 'Pyrex measuring cup'],
+      equipment: ['2 large bowls', 'Pyrex measuring cup'],
       instructions: [
-        'Place 3 cups farro in large bowl, cover with hot water by 1 inch - let soak',
+        'Place 1.5 cups farro in bowl, cover with hot water by 1 inch - let soak (for mushroom recipe)',
+        'Place 2 cups farro in separate bowl, cover with hot water by 1 inch - let soak (for plain batch)',
         'Place dried porcini mushrooms in Pyrex measuring cup with 2 cups boiling water - let sit 30 min'
       ],
       completed: false
@@ -156,7 +163,29 @@ export const mockPlan: MealPlan = {
     {
       id: 'step-3',
       stepNumber: 3,
-      title: '2:00 PM - VEGETABLE PREP',
+      title: '2:00 PM - START PLAIN FARRO',
+      duration: '5 min active, then 30-40 min simmer',
+      ingredients: [
+        '2 cups soaked plain farro (drained)',
+        '6 cups water or plain vegetable stock',
+        '1 tsp salt'
+      ],
+      equipment: ['Large pot'],
+      instructions: [
+        'Drain the 2 cups soaked plain farro',
+        'In large pot: bring 6 cups water (or plain vegetable stock) to boil',
+        'Add 1 tsp salt',
+        'Add drained farro, return to boil',
+        'Reduce heat to gentle simmer, cover',
+        'Set timer for 30 minutes (will check at 30 min, may need up to 40 min total)',
+        'This batch should yield ~6 cups cooked plain farro for the week'
+      ],
+      completed: false
+    },
+    {
+      id: 'step-4',
+      stepNumber: 4,
+      title: '2:05 PM - VEGETABLE PREP',
       duration: '25 min',
       ingredients: [
         '4-6 garlic cloves',
@@ -191,12 +220,12 @@ export const mockPlan: MealPlan = {
       completed: false
     },
     {
-      id: 'step-4',
-      stepNumber: 4,
-      title: '2:25 PM - START FARRO & MUSHROOMS',
-      duration: '15 min active',
+      id: 'step-5',
+      stepNumber: 5,
+      title: '2:30 PM - START MUSHROOM FARRO',
+      duration: '15 min active, then 50 min simmer',
       ingredients: [
-        'Soaked farro (drained)',
+        '1.5 cups soaked farro (drained, for mushroom recipe)',
         'Reconstituted porcini mushrooms',
         'Mushroom liquid',
         'Stock (to make 6 cups total with mushroom liquid)',
@@ -221,15 +250,17 @@ export const mockPlan: MealPlan = {
         'Add salt, garlic (2 cloves), rosemary - cook 5 min until mushrooms tender',
         'Add drained farro + reconstituted porcini, stir until grains crackle (2 min)',
         'Add ½ cup white wine, cook until absorbed',
-        'Add stock (save 1 cup), bring to simmer',
-        'Cover and reduce to gentle simmer - set timer for 50 minutes'
+        'Add 5 cups of the mushroom stock (save 1 cup for adjusting later)',
+        'Bring to simmer, cover and reduce to gentle simmer - set timer for 50 minutes',
+        'This batch yields ~4.5 cups cooked mushroom farro'
       ],
+      notes: ['Note: Both farro batches are now cooking in parallel. Plain farro finishes around 3:00-3:10 PM, mushroom farro finishes around 3:20 PM.'],
       completed: false
     },
     {
-      id: 'step-5',
-      stepNumber: 5,
-      title: '2:40 PM - MAKE MISO BUTTER & BIBIMBAP DRESSING',
+      id: 'step-6',
+      stepNumber: 6,
+      title: '2:45 PM - MAKE MISO BUTTER & BIBIMBAP DRESSING',
       duration: '10 min',
       ingredients: [
         '8 tbsp softened butter',
@@ -255,9 +286,9 @@ export const mockPlan: MealPlan = {
       completed: false
     },
     {
-      id: 'step-6',
-      stepNumber: 6,
-      title: '2:50 PM - PREP BIBIMBAP VEGETABLES',
+      id: 'step-7',
+      stepNumber: 7,
+      title: '2:55 PM - PREP BIBIMBAP VEGETABLES',
       duration: '15 min',
       ingredients: [
         'Salted cucumbers',
@@ -277,9 +308,27 @@ export const mockPlan: MealPlan = {
       completed: false
     },
     {
-      id: 'step-7',
-      stepNumber: 7,
-      title: '3:05 PM - BLANCH GREEN BEANS',
+      id: 'step-8',
+      stepNumber: 8,
+      title: '3:10 PM - CHECK & FINISH PLAIN FARRO',
+      duration: '5 min',
+      ingredients: [
+        'Plain farro (cooking)'
+      ],
+      equipment: ['Colander', 'Large container'],
+      instructions: [
+        'Check at 30 min mark - farro should be tender with slight chew',
+        'If not tender, continue cooking and check every 5 min (up to 40 min total)',
+        'When done, drain any excess liquid',
+        'Let cool slightly, then store ~6 cups plain farro in large container, refrigerate',
+        'This is your neutral base for bibimbap, crispy grain dish, and various bowls throughout the week'
+      ],
+      completed: false
+    },
+    {
+      id: 'step-9',
+      stepNumber: 9,
+      title: '3:15 PM - BLANCH GREEN BEANS',
       duration: '10 min',
       ingredients: [
         '1 lb green beans (cut into ½-inch lengths)',
@@ -295,9 +344,9 @@ export const mockPlan: MealPlan = {
       completed: false
     },
     {
-      id: 'step-8',
-      stepNumber: 8,
-      title: '3:15 PM - COOK TOFU',
+      id: 'step-10',
+      stepNumber: 10,
+      title: '3:25 PM - COOK TOFU',
       duration: '10 min',
       ingredients: [
         'Marinated tofu',
@@ -313,53 +362,54 @@ export const mockPlan: MealPlan = {
       completed: false
     },
     {
-      id: 'step-9',
-      stepNumber: 9,
-      title: '3:25 PM - FINISH FARRO',
-      duration: '15 min',
+      id: 'step-11',
+      stepNumber: 11,
+      title: '3:30 PM - FINISH MUSHROOM FARRO',
+      duration: '10 min',
       ingredients: [
-        'Cooked farro',
-        'Reserved stock (1 cup if needed)',
+        'Mushroom farro (cooking)',
+        'Reserved mushroom stock (1 cup if needed)',
         'Parmesan',
         'Parsley',
         'Black pepper'
       ],
       equipment: ['Large skillet'],
       instructions: [
-        'After 50 min, check farro tenderness - some grains should be splaying',
+        'After 50 min, check mushroom farro tenderness - some grains should be splaying',
         'Remove lid, stir vigorously',
+        'Taste and adjust seasoning',
         'If too much liquid: raise heat and cook down to sauce consistency',
-        'If too dry: add remaining 1 cup stock',
+        'If too dry: add remaining 1 cup mushroom stock',
         'Stir in Parmesan, parsley, pepper',
-        'Keep 2 cups farro separate for crispy grain dish later this week',
-        'Store remaining farro (about 4-5 cups) in large container for bowls/other meals'
+        'Keep all ~4.5 cups of this mushroom farro for Sunday dinner and one more meal this week'
       ],
       completed: false
     },
     {
-      id: 'step-10',
-      stepNumber: 10,
+      id: 'step-12',
+      stepNumber: 12,
       title: '3:40 PM - SUNDAY DINNER: FARRO WITH MUSHROOMS',
       duration: '5 min',
       ingredients: [],
       equipment: ['Serving plates'],
       instructions: [
-        'Serve the fresh farro with mushrooms while hot',
-        'This is your spotlight Sunday dinner - the earthy, rich flavors are perfect eaten immediately'
+        'Serve the mushroom farro hot. This is your spotlight Sunday dinner - the earthy, rich flavors with wine and porcini are perfect eaten immediately.',
+        "You'll have enough for Sunday dinner plus leftovers for one more meal (see Thursday option in meal guide)."
       ],
       notes: ['Optional Sunday evening task (10 min): Roast broccolini - toss with olive oil, salt, pepper; roast at 425°F for 12-15 min until crispy. OR save this for a weeknight when you want fresh vegetables'],
       completed: false
     },
     {
-      id: 'step-11',
-      stepNumber: 11,
+      id: 'step-13',
+      stepNumber: 13,
       title: '4:00 PM - DONE',
       duration: '0 min',
       ingredients: [],
       equipment: [],
       instructions: [
         'Your fridge now contains:',
-        '- 4-5 cups cooked farro',
+        '- 6 cups plain farro (neutral base for multiple meals)',
+        '- 4.5 cups mushroom farro (richly flavored for Italian-style dishes)',
         '- Marinated tofu (cooked)',
         '- Miso butter (double batch)',
         '- Bibimbap dressing',
@@ -414,10 +464,10 @@ export const mockPlan: MealPlan = {
       name: 'Bibimbap-Style Grain Bowl',
       assemblyTime: '12 min',
       cookingMethod: 'Stovetop',
-      components: ['Farro', 'Tofu', 'Cucumbers', 'Carrots', 'Spinach', 'Shiitakes'],
+      components: ['Plain farro', 'Tofu', 'Cucumbers', 'Carrots', 'Spinach', 'Shiitakes'],
       freshIngredients: ['Eggs', 'Kochujang (optional)', 'Sesame seeds'],
       instructions: [
-        'Reheat 2 cups farro in microwave or in skillet with splash of water',
+        'Reheat 2 cups plain farro in microwave or in skillet with splash of water',
         'Fry 2 eggs in nonstick skillet until whites set, yolks runny',
         'Heat bowls, place warm farro in center',
         'Arrange around farro: tofu, cucumbers, carrots, spinach, shiitakes (can use cold or quickly warm in microwave)',
@@ -433,11 +483,11 @@ export const mockPlan: MealPlan = {
       name: 'Crispy Grains & Halloumi with Smashed Cucumbers',
       assemblyTime: '18 min',
       cookingMethod: 'Broiler',
-      components: ['Farro (2 cups)', 'Cucumbers'],
+      components: ['Plain farro (2 cups)', 'Cucumbers'],
       freshIngredients: ['Halloumi (8-9 oz)', 'Chickpeas (canned, drained)', 'Lime/lemon', 'Cilantro/herbs', 'Cumin', 'Olive oil'],
       instructions: [
         'Heat broiler on high, rack 6 inches from heat',
-        'On sheet pan: spread 2 cups farro, torn halloumi (8-9 oz), drained chickpeas',
+        'On sheet pan: spread 2 cups plain farro, torn halloumi (8-9 oz), drained chickpeas',
         'Pat everything dry with paper towel',
         'Add 3 tbsp olive oil, 1 tsp cumin, salt, pepper - toss to coat',
         'Broil 7-10 min, shaking pan occasionally, until chickpeas pop and everything is golden',
@@ -453,15 +503,23 @@ export const mockPlan: MealPlan = {
       name: 'Farro Bowl with Miso-Glazed Vegetables',
       assemblyTime: '15 min',
       cookingMethod: 'Stovetop + oven',
-      components: ['Farro', 'Tofu', 'Miso butter'],
+      components: ['Mushroom farro OR plain farro + tofu', 'Miso butter'],
       freshIngredients: ['Broccolini', 'Optional: fried egg, arugula, sesame seeds'],
       instructions: [
+        'Option A - Use mushroom farro (Italian-style):',
         'Preheat oven to 425°F',
-        'Toss broccolini (or any extra vegetables) with 1 tbsp oil, salt, pepper',
-        'Roast 12-15 min until crispy at edges',
-        'Meanwhile, reheat 2 cups farro in skillet with splash of water',
+        'Toss broccolini with 1 tbsp oil, salt, pepper; roast 12-15 min',
+        'Meanwhile, reheat 2 cups mushroom farro in skillet with splash of stock',
+        'Assemble bowls: mushroom farro base, roasted broccolini',
+        'Top with knob of butter or spoonful of miso butter, Parmesan, black pepper',
+        'Optional: fried egg, arugula',
+        '',
+        'Option B - Use plain farro (Asian-style):',
+        'Preheat oven to 425°F',
+        'Toss broccolini with 1 tbsp oil, salt, pepper; roast 12-15 min',
+        'Meanwhile, reheat 2 cups plain farro in skillet with splash of water',
         'Warm tofu in same skillet',
-        'Assemble bowls: farro base, tofu, roasted broccolini',
+        'Assemble bowls: plain farro base, tofu, roasted broccolini',
         'Top with spoonful of miso butter, let melt over hot vegetables',
         'Optional: fried egg, arugula, sesame seeds',
         'Serves: 2'
@@ -474,12 +532,12 @@ export const mockPlan: MealPlan = {
       name: 'Quick Mushroom Farro Bowl',
       assemblyTime: '10 min',
       cookingMethod: 'Stovetop',
-      components: ['Farro', 'Green beans', 'Miso butter or Parmesan'],
+      components: ['Plain farro OR mushroom farro', 'Green beans', 'Miso butter or Parmesan'],
       freshIngredients: ['Extra cremini mushrooms (optional)', 'Arugula', 'Optional: fried egg'],
       instructions: [
         'Heat 1 tbsp oil in skillet over medium-high',
         'If you have extra cremini mushrooms: slice and sauté 3-4 min until golden',
-        'Add 2 cups farro, green beans, splash of stock or water',
+        'Add 2 cups plain farro (or mushroom farro if you prefer), green beans, splash of stock or water',
         'Warm through, 3-4 min',
         'Finish with spoonful of miso butter or knob of regular butter, Parmesan, black pepper',
         'Top with arugula, optional fried egg',
@@ -497,7 +555,7 @@ export const mockPlan: MealPlan = {
       freshIngredients: ['Whatever looks good in your fridge'],
       instructions: [
         'Option 1: Gnocchi + Greens Variation - Pan-fry gnocchi, toss with any remaining vegetables, miso butter, top with fried egg',
-        'Option 2: Grain Bowl Remix - Use remaining farro with any leftover tofu, vegetables, and dressings',
+        'Option 2: Grain Bowl Remix - Use remaining plain or mushroom farro with any leftover tofu, vegetables, and dressings - mix and match for whatever sounds good',
         'Option 3: Order in or eat out - you\'ve earned it!',
         'Notes: This is your creative night. Mix and match components based on what you have left and what sounds good.'
       ],
@@ -509,7 +567,8 @@ export const mockPlan: MealPlan = {
       id: 'note-1',
       title: 'Component Inventory After Sunday Prep',
       content: [
-        'Cooked farro (4-5 cups) - Large airtight container, 5 days',
+        'Plain cooked farro (~6 cups) - Large airtight container, 5 days - use for bibimbap, crispy grain dish, miso butter bowls',
+        'Mushroom cooked farro (~4.5 cups) - Large airtight container, 5 days - use for Sunday dinner, Italian-style bowls, simple butter/Parmesan meals',
         'Marinated tofu (cooked, ¾ lb) - Container with marinade, 4-5 days',
         'Eggs (4, raw) - For fresh frying, 2+ weeks',
         'Halloumi (8-9 oz, raw) - Original packaging, 1 week+',
@@ -530,7 +589,7 @@ export const mockPlan: MealPlan = {
       title: 'Component Longevity Guide',
       content: [
         'Use early in week (Days 1-3): Cucumbers with dressing, Arugula, Cooked spinach',
-        'Use any time (Days 1-5): Farro, Tofu, Green beans, Carrots, Shiitakes, Miso butter, Bibimbap dressing',
+        'Use any time (Days 1-5): Plain farro, Mushroom farro, Tofu, Green beans, Carrots, Shiitakes, Miso butter, Bibimbap dressing',
         'Pantry stable: Gnocchi, Chickpeas (canned), Halloumi (stays fresh wrapped)'
       ]
     },
@@ -538,9 +597,10 @@ export const mockPlan: MealPlan = {
       id: 'note-3',
       title: 'Leftover Strategy',
       content: [
-        'Lunches: Pack farro bowls with any combination of tofu, vegetables, and dressings. They reheat well or can be eaten cold as grain salads.',
-        'Breakfast: Fry an egg, serve over warm farro with arugula and miso butter',
+        'Lunches: Pack plain farro bowls with any combination of tofu, vegetables, and dressings. They reheat well or can be eaten cold as grain salads. The mushroom farro is perfect reheated with butter and Parmesan.',
+        'Breakfast: Fry an egg, serve over warm plain farro with arugula and miso butter',
         'Snacks: Crispy chickpeas from Wednesday\'s recipe are great cold',
+        'Mixing batches: While the two farro batches have distinct flavors, you can combine them if you\'re running low and don\'t mind the mixed flavor profile',
         'The miso butter is incredibly versatile - use it on any grain, vegetable, or protein combination',
         'If you get tired of farro, swap in rice or other cooked grains mid-week',
         'The bibimbap-style bowl can accommodate any vegetables you have on hand',
@@ -578,7 +638,8 @@ export const mockPlan: MealPlan = {
       id: 'note-7',
       title: 'Time-Saving Tips for Next Time',
       content: [
-        'Farro batch cooking: Next time you prep farro, consider cooking 6+ cups and freezing half in 2-cup portions. Farro freezes beautifully and thaws quickly.',
+        'Farro batch cooking: The two-batch approach (plain + flavored) gives you maximum flexibility without flavor conflicts. Next time you prep, consider cooking 6+ cups of plain farro and freezing half in 2-cup portions. Plain farro freezes beautifully and thaws quickly.',
+        'Skip the mushroom batch: If you want to simplify further, you could skip the mushroom farro entirely and just make the plain batch, using it for all meals. You\'d lose Sunday\'s spotlight dinner but gain simplicity.',
         'Miso butter: The double batch will last beyond this week. You can keep making it in quantity.',
         'Tofu marinade: This same marinade works for tempeh, mushrooms, or even vegetables. Make extra and keep in the fridge.'
       ]
