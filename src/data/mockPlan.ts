@@ -82,16 +82,16 @@ export const mockPlan: MealPlan = {
     { id: 'prod-16', name: '2 limes or lemons', quantity: 'for cucumber salad', category: 'Produce', checked: false },
 
     // Grains & Legumes
-    { id: 'grain-1', name: '3 cups farro', quantity: 'cook extra for multiple uses - buy 1 lb bag', category: 'Grains', checked: false },
+    { id: 'grain-1', name: '3 cups farro', quantity: 'cook extra for multiple uses - buy 1 lb bag', category: 'Pantry', checked: false },
     { id: 'grain-2', name: '1 (15-oz) can chickpeas', quantity: '', category: 'Pantry', checked: false },
-    { id: 'grain-3', name: '1 (16-18 oz) package shelf-stable potato gnocchi', quantity: '', category: 'Grains', checked: false },
+    { id: 'grain-3', name: '1 (16-18 oz) package shelf-stable potato gnocchi', quantity: '', category: 'Pantry', checked: false },
 
     // Protein & Dairy
-    { id: 'protein-1', name: '¾ lb tofu', quantity: 'for bibimbap marinade', category: 'Protein', checked: false },
+    { id: 'protein-1', name: '¾ lb tofu', quantity: 'for bibimbap marinade', category: 'Meat', checked: false },
     { id: 'dairy-1', name: '8-9 oz halloumi', quantity: 'or feta, for crispy grain dish', category: 'Dairy', checked: false },
     { id: 'dairy-2', name: '1-2 oz Parmesan cheese', quantity: 'for farro dish', category: 'Dairy', checked: false },
     { id: 'dairy-3', name: '4 tablespoons unsalted butter', quantity: 'for miso butter', category: 'Dairy', checked: false },
-    { id: 'protein-2', name: '4 eggs', quantity: 'optional for bibimbap, but recommended', category: 'Protein', checked: false },
+    { id: 'protein-2', name: '4 eggs', quantity: 'optional for bibimbap, but recommended', category: 'Meat', checked: false },
 
     // Pantry & Specialty Items
     { id: 'pant-1', name: '½ oz dried porcini mushrooms', quantity: '½ cup, for farro', category: 'Pantry', checked: false },
