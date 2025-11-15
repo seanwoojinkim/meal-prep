@@ -1,366 +1,375 @@
 import { MealPlan } from '../types';
 
 export const mockPlan: MealPlan = {
-  id: 'mock-plan-nov-2025',
-  weekStart: '2025-11-10',
-  weekEnd: '2025-11-16',
-  philosophy: "This week's meal prep centers around versatile components that can be mixed and matched for variety while minimizing daily cooking. The foundation includes batch-cooked black beans (used in both soup and tacos), roasted sweet potatoes (tacos and salad), and a quick chicken soup with pastina. We're building flavor diversity through different applications: spicy Mexican-inspired, Italian comfort food, Mediterranean roasted vegetables, and Asian-influenced tempeh salads. Front-load Sunday prep with beans, roasted vegetables, and soup base. Weeknight assembly should take 10-20 minutes max, mostly reheating and combining pre-prepped elements.",
+  id: 'mock-plan-nov-2025-wk2',
+  weekStart: '2025-11-18',
+  weekEnd: '2025-11-24',
+  philosophy: "This week centers around farro as your primary grain, creating a cohesive base for multiple meals while minimizing ingredient overlap. You'll prep three core component systems: Farro + Mushroom Base (from Farro with Mushrooms recipe) - earthy, rich foundation; Marinated Tofu (from Bibimbap) - versatile protein for bowls and stir-fries; Miso Butter (from Gnocchi recipe) - flavor bomb that works with everything. The philosophy: cook farro once in quantity, prep vegetables and proteins Sunday afternoon, then spend 10-15 minutes assembling dinners through the week. Since asparagus is imported and expensive right now, we'll use green beans and broccolini as seasonal alternatives that work perfectly with the miso butter.",
   spotlightDish: {
-    name: 'Roasted Red Cabbage with Walnuts and Feta',
-    description: 'Sunday dinner showcases tender roasted red cabbage wedges with apple cider vinaigrette, crumbled feta, toasted walnuts, lemon zest, and pomegranate seeds. Simple but stunning.',
-    cookTime: '40 minutes'
+    name: 'Farro with Mushrooms',
+    description: 'Sunday dinner showcases earthy, rich farro cooked risotto-style with dried porcini and fresh cremini mushrooms, finished with Parmesan and fresh herbs. This is your reward for the prep work.',
+    cookTime: '50 minutes'
   },
   components: [
     {
-      name: 'Chicken Soup with Pastina',
-      description: '6-7 cups of Italian comfort - tender chicken, vegetables, and tiny pasta in broth',
-      storage: 'Refrigerate 4-5 days'
+      name: 'Cooked Farro',
+      description: '4-5 cups cooked farro - your grain base for the week',
+      storage: 'Large airtight container, refrigerate 5 days'
     },
     {
-      name: 'Spicy Black Bean Soup',
-      description: '6-7 cups with salsa verde, cocoa powder, and cumin - partially blended',
-      storage: 'Refrigerate 3-4 days'
+      name: 'Marinated Tofu (Cooked)',
+      description: '¾ lb tofu stir-fried with sesame-soy-ginger marinade',
+      storage: 'Container with marinade, refrigerate 4-5 days'
     },
     {
-      name: 'Plain Cooked Black Beans',
-      description: '2-3 cups from soup batch - for tacos and grain bowls',
-      storage: 'Refrigerate 4-5 days'
+      name: 'Miso Butter (Double Batch)',
+      description: 'Butter smashed with white miso, sherry vinegar, and black pepper',
+      storage: 'Small container, refrigerate 1 week+'
     },
     {
-      name: 'Roasted Sweet Potato Cubes',
-      description: '3-4 cups total - split between tacos and tempeh salad',
-      storage: 'Refrigerate 4-5 days'
+      name: 'Bibimbap Dressing',
+      description: 'Rice vinegar, sesame oil, garlic, scallions, sesame seeds',
+      storage: 'Jar, refrigerate 1 week+'
     },
     {
-      name: 'Pickled Red Onions with Lime & Cilantro',
-      description: '1 cup quick-pickled - adds bright acidity to everything',
-      storage: 'Refrigerate 7-10 days'
+      name: 'Blanched Green Beans',
+      description: '1 lb green beans, blanched and shocked',
+      storage: 'Airtight container, refrigerate 4-5 days'
     },
     {
-      name: 'Sliced Garlic in Olive Oil',
-      description: '6 cloves thinly sliced for pasta aglio e olio',
-      storage: 'Refrigerate 3-4 days'
+      name: 'Cucumbers with Dressing',
+      description: 'Thinly sliced Persian cucumbers tossed with bibimbap dressing',
+      storage: 'Container, refrigerate 3-4 days (use early week)'
+    },
+    {
+      name: 'Dressed Carrots',
+      description: 'Matchstick carrots tossed with bibimbap dressing',
+      storage: 'Container, refrigerate 5 days'
+    },
+    {
+      name: 'Cooked Spinach',
+      description: 'Wilted spinach tossed with bibimbap dressing',
+      storage: 'Container, refrigerate 3-4 days'
+    },
+    {
+      name: 'Cooked Shiitakes',
+      description: 'Stir-fried shiitake mushrooms',
+      storage: 'Container, refrigerate 4-5 days'
+    },
+    {
+      name: 'Washed Arugula',
+      description: '2 packed cups baby arugula, washed and dried',
+      storage: 'Container with paper towel, refrigerate 3-4 days'
     }
   ],
   shoppingList: [
     // Produce
-    { id: 'prod-1', name: '2 large sweet potatoes', quantity: 'for tacos and tempeh salad', category: 'Produce', checked: false },
-    { id: 'prod-2', name: '1 medium red cabbage', quantity: '1¾-2 lbs', category: 'Produce', checked: false },
-    { id: 'prod-3', name: '3 large carrots', quantity: 'for chicken soup', category: 'Produce', checked: false },
-    { id: 'prod-4', name: '3 large celery ribs', quantity: 'for chicken soup', category: 'Produce', checked: false },
-    { id: 'prod-5', name: '1 large yellow onion', quantity: 'for chicken soup', category: 'Produce', checked: false },
-    { id: 'prod-6', name: '2-3 red onions', quantity: 'for pickling, garnish', category: 'Produce', checked: false },
-    { id: 'prod-7', name: '6-8 garlic cloves', quantity: 'soup, pasta aglio e olio', category: 'Produce', checked: false },
-    { id: 'prod-8', name: '5 oz arugula', quantity: 'about 5 packed cups, for pasta', category: 'Produce', checked: false },
-    { id: 'prod-9', name: 'Large bunch cilantro', quantity: 'black bean soup, tacos, pickled onions', category: 'Produce', checked: false },
-    { id: 'prod-10', name: 'Large bunch parsley', quantity: 'for chicken soup', category: 'Produce', checked: false },
-    { id: 'prod-11', name: '1 small lemon', quantity: 'for pasta aglio e olio', category: 'Produce', checked: false },
-    { id: 'prod-12', name: '2-3 limes', quantity: 'pickled onions, taco garnish', category: 'Produce', checked: false },
-    { id: 'prod-13', name: 'Fresh herbs for salad', quantity: 'mint, parsley, or dill - optional', category: 'Produce', checked: false },
-    { id: 'prod-14', name: '1 avocado', quantity: 'for taco topping - buy closer to use', category: 'Produce', checked: false },
-    { id: 'prod-15', name: '1-2 radishes', quantity: 'optional, for soup/taco garnish', category: 'Produce', checked: false },
-    { id: 'prod-16', name: 'Salad greens base', quantity: 'mixed greens or spinach, 4-5 cups', category: 'Produce', checked: false },
+    { id: 'prod-1', name: '1 lb green beans', quantity: 'substitute for asparagus', category: 'Produce', checked: false },
+    { id: 'prod-2', name: '1 lb broccolini', quantity: 'for additional vegetable component', category: 'Produce', checked: false },
+    { id: 'prod-3', name: '1 lb cremini mushrooms', quantity: 'for farro dish', category: 'Produce', checked: false },
+    { id: 'prod-4', name: '6 fresh shiitake mushrooms', quantity: 'for bibimbap components', category: 'Produce', checked: false },
+    { id: 'prod-5', name: '4 Persian cucumbers', quantity: 'for crispy grain recipe and bibimbap - buy extra', category: 'Produce', checked: false },
+    { id: 'prod-6', name: '6 oz carrots', quantity: '1 large, for bibimbap', category: 'Produce', checked: false },
+    { id: 'prod-7', name: '1 large bunch spinach or 1 6-oz bag baby spinach', quantity: 'for bibimbap', category: 'Produce', checked: false },
+    { id: 'prod-8', name: '2 packed cups baby arugula', quantity: 'for gnocchi/bowls', category: 'Produce', checked: false },
+    { id: 'prod-9', name: '½ cup finely chopped onion', quantity: 'about ½ medium onion, for farro', category: 'Produce', checked: false },
+    { id: 'prod-10', name: '2 to 3 scallions', quantity: 'for bibimbap dressing', category: 'Produce', checked: false },
+    { id: 'prod-11', name: 'Fresh rosemary', quantity: '2 teaspoons needed', category: 'Produce', checked: false },
+    { id: 'prod-12', name: 'Fresh parsley', quantity: '¼ cup needed', category: 'Produce', checked: false },
+    { id: 'prod-13', name: '½ cup cilantro, dill, or parsley', quantity: 'for cucumber salad', category: 'Produce', checked: false },
+    { id: 'prod-14', name: 'Fresh ginger', quantity: '1 tablespoon minced/grated needed', category: 'Produce', checked: false },
+    { id: 'prod-15', name: '4-6 garlic cloves', quantity: 'used across multiple recipes', category: 'Produce', checked: false },
+    { id: 'prod-16', name: '2 limes or lemons', quantity: 'for cucumber salad', category: 'Produce', checked: false },
 
-    // Pantry & Canned Goods
-    { id: 'pant-1', name: '6 (15-oz) cans black beans', quantity: '4 for soup, 2 for tacos', category: 'Pantry', checked: false },
-    { id: 'pant-2', name: '2 (16-oz) jars mild salsa verde', quantity: 'or 3½ cups homemade', category: 'Pantry', checked: false },
-    { id: 'pant-3', name: '2 (4-oz) cans chopped green chiles', quantity: '', category: 'Pantry', checked: false },
-    { id: 'pant-4', name: '2 (5-7 oz) cans/jars tuna, drained', quantity: 'oil-packed preferred', category: 'Pantry', checked: false },
-    { id: 'pant-5', name: '1 lb spaghetti', quantity: 'or other long pasta', category: 'Pantry', checked: false },
-    { id: 'pant-6', name: '½ cup pastina', quantity: 'Acini di Pepe or orzo, ~4 oz', category: 'Pantry', checked: false },
-    { id: 'pant-7', name: '1 package smoky tempeh', quantity: '8 oz', category: 'Pantry', checked: false },
-    { id: 'pant-8', name: 'Tortilla chips', quantity: 'for soup topping', category: 'Pantry', checked: false },
-    { id: 'pant-9', name: 'Corn or flour tortillas', quantity: '8-12 for tacos', category: 'Pantry', checked: false },
+    // Grains & Legumes
+    { id: 'grain-1', name: '3 cups farro', quantity: 'cook extra for multiple uses - buy 1 lb bag', category: 'Grains', checked: false },
+    { id: 'grain-2', name: '1 (15-oz) can chickpeas', quantity: '', category: 'Pantry', checked: false },
+    { id: 'grain-3', name: '1 (16-18 oz) package shelf-stable potato gnocchi', quantity: '', category: 'Grains', checked: false },
 
-    // Spices & Seasonings
-    { id: 'spice-1', name: 'Unsweetened cocoa powder', quantity: '2 tbsp', category: 'Pantry', checked: false },
-    { id: 'spice-2', name: 'Ground cumin', quantity: '2 tsp', category: 'Pantry', checked: false },
-    { id: 'spice-3', name: 'Garlic powder', quantity: '2½ tsp total', category: 'Pantry', checked: false },
-    { id: 'spice-4', name: 'Crushed red pepper flakes', quantity: 'for pasta', category: 'Pantry', checked: false },
-    { id: 'spice-5', name: 'Black pepper', quantity: '', category: 'Pantry', checked: false },
-    { id: 'spice-6', name: 'Kosher salt', quantity: 'Diamond Crystal preferred', category: 'Pantry', checked: false },
-    { id: 'spice-7', name: 'Tomato paste', quantity: '2 tsp', category: 'Pantry', checked: false },
-    { id: 'spice-8', name: 'Dijon mustard', quantity: '½ tsp', category: 'Pantry', checked: false },
-    { id: 'spice-9', name: 'Apple cider vinegar', quantity: 'for cabbage and pickled onions', category: 'Pantry', checked: false },
-    { id: 'spice-10', name: 'Extra-virgin olive oil', quantity: '¾ cup total', category: 'Pantry', checked: false },
+    // Protein & Dairy
+    { id: 'protein-1', name: '¾ lb tofu', quantity: 'for bibimbap marinade', category: 'Protein', checked: false },
+    { id: 'dairy-1', name: '8-9 oz halloumi', quantity: 'or feta, for crispy grain dish', category: 'Dairy', checked: false },
+    { id: 'dairy-2', name: '1-2 oz Parmesan cheese', quantity: 'for farro dish', category: 'Dairy', checked: false },
+    { id: 'dairy-3', name: '4 tablespoons unsalted butter', quantity: 'for miso butter', category: 'Dairy', checked: false },
+    { id: 'protein-2', name: '4 eggs', quantity: 'optional for bibimbap, but recommended', category: 'Protein', checked: false },
 
-    // Dairy & Cheese
-    { id: 'dairy-1', name: '⅔ cup (3 oz) crumbled feta cheese', quantity: 'for roasted cabbage', category: 'Dairy', checked: false },
-    { id: 'dairy-2', name: '6-8 oz cheddar cheese, shredded', quantity: 'for tacos', category: 'Dairy', checked: false },
-    { id: 'dairy-3', name: 'Sour cream', quantity: 'for soup and taco topping', category: 'Dairy', checked: false },
-    { id: 'dairy-4', name: 'Parmesan cheese, grated', quantity: 'for chicken soup', category: 'Dairy', checked: false },
-
-    // Protein
-    { id: 'meat-1', name: '2 large boneless, skinless chicken breasts', quantity: 'about 1 lb, for soup', category: 'Meat', checked: false },
-
-    // Nuts & Garnish
-    { id: 'pant-10', name: '⅓ cup walnuts', quantity: 'for roasted cabbage', category: 'Pantry', checked: false },
-    { id: 'pant-11', name: '½ cup mixed nuts', quantity: 'walnuts, almonds, or pecans for tempeh salad', category: 'Pantry', checked: false },
-    { id: 'prod-17', name: 'Pomegranate seeds', quantity: 'for roasted cabbage - optional', category: 'Produce', checked: false },
-    { id: 'prod-18', name: 'Lemon zest', quantity: 'for roasted cabbage', category: 'Produce', checked: false },
-    { id: 'prod-19', name: 'Fresh chiles', quantity: 'optional, for soup topping', category: 'Produce', checked: false },
-    { id: 'prod-20', name: 'Queso fresco', quantity: 'optional, for soup topping', category: 'Dairy', checked: false },
+    // Pantry & Specialty Items
+    { id: 'pant-1', name: '½ oz dried porcini mushrooms', quantity: '½ cup, for farro', category: 'Pantry', checked: false },
+    { id: 'pant-2', name: '1 quart chicken or vegetable stock', quantity: 'for farro', category: 'Pantry', checked: false },
+    { id: 'pant-3', name: 'Extra virgin olive oil', quantity: '', category: 'Pantry', checked: false },
+    { id: 'pant-4', name: 'Vegetable or canola oil', quantity: '', category: 'Pantry', checked: false },
+    { id: 'pant-5', name: 'Asian sesame oil', quantity: '', category: 'Pantry', checked: false },
+    { id: 'pant-6', name: 'Soy sauce', quantity: '¼ cup + extra', category: 'Pantry', checked: false },
+    { id: 'pant-7', name: 'Mirin', quantity: '2 tablespoons - sweet Japanese rice wine', category: 'Pantry', checked: false },
+    { id: 'pant-8', name: 'Rice wine vinegar', quantity: '1 tablespoon + 2 tablespoons', category: 'Pantry', checked: false },
+    { id: 'pant-9', name: 'White miso', quantity: '2 tablespoons', category: 'Pantry', checked: false },
+    { id: 'pant-10', name: 'Sherry vinegar', quantity: '2 teaspoons', category: 'Pantry', checked: false },
+    { id: 'pant-11', name: 'Dry white wine', quantity: '½ cup for farro', category: 'Pantry', checked: false },
+    { id: 'pant-12', name: 'Toasted sesame seeds', quantity: '1 tablespoon + extra for garnish', category: 'Pantry', checked: false },
+    { id: 'pant-13', name: 'Ground cumin or coriander', quantity: '1 teaspoon', category: 'Pantry', checked: false },
+    { id: 'pant-14', name: 'Sugar', quantity: '1 teaspoon', category: 'Pantry', checked: false },
+    { id: 'pant-15', name: 'Black pepper', quantity: '', category: 'Pantry', checked: false },
+    { id: 'pant-16', name: 'Salt', quantity: '', category: 'Pantry', checked: false },
+    { id: 'pant-17', name: 'Korean red pepper paste (kochujang)', quantity: 'optional but adds great flavor', category: 'Pantry', checked: false },
+    { id: 'pant-18', name: '2 sheets nori seaweed', quantity: 'optional for bibimbap', category: 'Pantry', checked: false },
   ],
   prepSteps: [
     {
       id: 'step-1',
       stepNumber: 1,
-      title: '2:00 PM - START & PREHEAT',
-      duration: '10 min',
+      title: '1:45 PM - PREP START - Initial Soaking',
+      duration: '5 min',
       ingredients: [
-        '2 large boneless, skinless chicken breasts (about 1 lb)',
-        '10 cups water',
-        '2 large sweet potatoes'
+        '3 cups farro',
+        '½ oz dried porcini mushrooms (½ cup)',
+        '2 cups boiling water'
       ],
-      equipment: ['Large pot', 'Sheet pan', 'Fork'],
+      equipment: ['Large bowl', 'Pyrex measuring cup'],
       instructions: [
-        'Preheat oven to 425°F',
-        'Fill large pot with 10 cups water and place chicken breasts inside; set on high heat (for chicken soup base)',
-        'Wash and scrub sweet potatoes; pierce with fork'
+        'Place 3 cups farro in large bowl, cover with hot water by 1 inch - let soak',
+        'Place dried porcini mushrooms in Pyrex measuring cup with 2 cups boiling water - let sit 30 min'
       ],
       completed: false
     },
     {
       id: 'step-2',
       stepNumber: 2,
-      title: '2:10 PM - SWEET POTATOES & INITIAL PREP',
-      duration: '15 min',
-      parallelTasks: ['While sweet potatoes start'],
+      title: '1:50 PM - TOFU MARINADE',
+      duration: '10 min',
       ingredients: [
-        'Sweet potatoes',
-        'Olive oil',
-        'Salt',
-        '1 large yellow onion',
-        '3 large carrots',
-        '3 large celery ribs',
-        '6-8 garlic cloves',
-        '2-3 red onions'
+        '¾ lb tofu',
+        '1 tbsp sesame oil',
+        '¼ cup soy sauce',
+        '2 tbsp mirin',
+        '1 tbsp rice vinegar',
+        '1 tbsp grated ginger',
+        '1 tsp sugar'
       ],
-      equipment: ['Sheet pan', 'Cutting board', 'Chef\'s knife'],
+      equipment: ['Whisk', 'Container'],
       instructions: [
-        'Place sweet potatoes on sheet pan, drizzle with olive oil, season with salt',
-        'Put in oven (will roast for ~45-50 minutes)',
-        'While sweet potatoes start: Begin chopping vegetables',
-        'Dice yellow onion (for chicken soup)',
-        'Slice carrots and celery into ¼-inch half moons (for chicken soup)',
-        'Mince garlic (3 cloves for soup, set aside 6 cloves for pasta)',
-        'Thinly slice red onions (for pickling)'
+        'Whisk together: 1 tbsp sesame oil, ¼ cup soy sauce, 2 tbsp mirin, 1 tbsp rice vinegar, 1 tbsp grated ginger, 1 tsp sugar',
+        'Drain tofu, pat dry, cut into ½-inch dominoes',
+        'Add tofu to marinade, toss gently, refrigerate (will marinate while you do other prep)'
       ],
       completed: false
     },
     {
       id: 'step-3',
       stepNumber: 3,
-      title: '2:25 PM - CHICKEN SOUP CONTINUES',
-      duration: '5 min',
+      title: '2:00 PM - VEGETABLE PREP',
+      duration: '25 min',
       ingredients: [
-        'Sliced onion',
-        '3 tbsp olive oil',
-        '2 tbsp salt',
-        '½ tsp garlic powder',
-        '¼ tsp black pepper'
+        '4-6 garlic cloves',
+        '2-3 scallions',
+        '½ cup onion',
+        '¼ cup parsley',
+        '2 tsp fresh rosemary',
+        '1 lb green beans',
+        '1 lb broccolini',
+        'Persian cucumbers',
+        '6 oz carrots',
+        '6 fresh shiitake mushrooms',
+        '1 lb cremini mushrooms',
+        'Baby arugula'
       ],
-      equipment: ['Large pot with chicken', 'Spoon'],
+      equipment: ['Cutting board', 'Chef\'s knife', 'Colander'],
       instructions: [
-        'By now, chicken water should be boiling; skim foam',
-        'Add to soup pot: sliced onion, 3 tbsp olive oil, 2 tbsp salt, ½ tsp garlic powder, ¼ tsp black pepper',
-        'Stir, let come back to boil, cover, reduce to medium-low',
-        'Set timer for 10 minutes'
+        'Mince/purée 4-6 garlic cloves total (divide: 2 for farro, 2 for bibimbap dressing)',
+        'Mince 2-3 scallions (for bibimbap dressing)',
+        'Finely chop ½ cup onion (for farro)',
+        'Chop ¼ cup parsley (for farro)',
+        'Chop 2 tsp fresh rosemary (for farro)',
+        'Trim and cut 1 lb green beans into ½-inch lengths',
+        'Trim broccolini (keep whole or halve lengthwise)',
+        'Slice Persian cucumbers thinly (for cucumber salad component)',
+        'Cut carrots into matchsticks or grate (for bibimbap)',
+        'Stem and slice shiitake mushrooms',
+        'Slice cremini mushrooms',
+        'Wash and spin dry arugula, refrigerate',
+        'Toss sliced cucumbers with salt in colander - let sit 15-30 min while you continue'
       ],
       completed: false
     },
     {
       id: 'step-4',
       stepNumber: 4,
-      title: '2:30 PM - PICKLED ONIONS & RED CABBAGE PREP',
-      duration: '10 min',
+      title: '2:25 PM - START FARRO & MUSHROOMS',
+      duration: '15 min active',
       ingredients: [
-        'Sliced red onions',
-        'Juice of 2 limes',
-        'Pinch of salt',
-        '¼ cup chopped cilantro',
-        '1 medium red cabbage (1¾-2 lbs)',
-        'Olive oil'
+        'Soaked farro (drained)',
+        'Reconstituted porcini mushrooms',
+        'Mushroom liquid',
+        'Stock (to make 6 cups total with mushroom liquid)',
+        '2 tbsp olive oil',
+        'Chopped onion',
+        'Sliced cremini mushrooms',
+        'Salt',
+        '2 cloves garlic (minced)',
+        '2 tsp rosemary',
+        '½ cup white wine'
       ],
-      equipment: ['Bowl', 'Second sheet pan', 'Parchment paper', 'Chef\'s knife'],
+      equipment: ['Large heavy nonstick skillet', 'Saucepan', 'Strainer with cheesecloth/paper towel'],
       instructions: [
-        'Make pickled onions: In bowl, combine sliced red onions, juice of 2 limes, pinch of salt, ¼ cup chopped cilantro. Toss and set aside to quick-pickle',
-        'Prep red cabbage: Remove tough outer leaves, halve lengthwise through core, cut into 1-1½ inch wedges',
-        'Line second sheet pan with parchment, arrange cabbage wedges on sides, drizzle with olive oil, sprinkle with salt'
+        'Strain dried porcini through cheesecloth/paper towel-lined strainer over bowl',
+        'Squeeze mushrooms, rinse to remove grit, chop coarsely',
+        'Add mushroom liquid to stock (should have 6 cups total)',
+        'Bring stock to simmer in saucepan, season with salt',
+        'Drain soaked farro',
+        'Heat 2 tbsp olive oil in large heavy nonstick skillet over medium heat',
+        'Add onion, cook 3 min stirring until softened',
+        'Add cremini mushrooms, cook until they sweat and soften',
+        'Add salt, garlic (2 cloves), rosemary - cook 5 min until mushrooms tender',
+        'Add drained farro + reconstituted porcini, stir until grains crackle (2 min)',
+        'Add ½ cup white wine, cook until absorbed',
+        'Add stock (save 1 cup), bring to simmer',
+        'Cover and reduce to gentle simmer - set timer for 50 minutes'
       ],
       completed: false
     },
     {
       id: 'step-5',
       stepNumber: 5,
-      title: '2:35 PM - ADD VEGETABLES TO SOUP',
-      duration: '5 min',
+      title: '2:40 PM - MAKE MISO BUTTER & BIBIMBAP DRESSING',
+      duration: '10 min',
       ingredients: [
-        'Sliced carrots',
-        'Sliced celery',
-        'Minced garlic (3 cloves)',
-        '2 tsp tomato paste'
+        '8 tbsp softened butter',
+        '4 tbsp white miso',
+        '4 tsp sherry vinegar',
+        'Black pepper',
+        '2 tbsp rice vinegar',
+        '1 tbsp sesame oil',
+        '2 garlic cloves (minced)',
+        '2-3 scallions (minced)',
+        '1 tbsp sesame seeds',
+        'Salt',
+        'Korean red pepper paste (optional)'
       ],
-      equipment: ['Spoon'],
+      equipment: ['Small bowl', 'Jar'],
       instructions: [
-        'Timer should go off - add carrots, celery, minced garlic, 2 tsp tomato paste to soup',
-        'Stir well, increase heat to high until gentle boil, then cover and reduce to medium-low',
-        'Set timer for 30 minutes'
+        'Miso butter (make double batch for week): In small bowl, smash together 8 tbsp softened butter, 4 tbsp white miso, 4 tsp sherry vinegar, black pepper',
+        'Store in container, refrigerate',
+        'Bibimbap dressing: Mix together 2 tbsp rice vinegar, 1 tbsp sesame oil, 2 garlic cloves (minced), 2-3 scallions (minced), 1 tbsp sesame seeds, salt to taste',
+        'Optional: add Korean red pepper paste to taste',
+        'Store in jar, refrigerate'
       ],
       completed: false
     },
     {
       id: 'step-6',
       stepNumber: 6,
-      title: '2:40 PM - CABBAGE IN OVEN & BLACK BEANS START',
-      duration: '10 min',
+      title: '2:50 PM - PREP BIBIMBAP VEGETABLES',
+      duration: '15 min',
       ingredients: [
-        '4 (15-oz) cans black beans (with liquid)',
-        '2 (16-oz) jars salsa verde (or 3½ cups)',
-        '2 (4-oz) cans chopped green chiles',
-        '2 tbsp cocoa powder',
-        '2 tsp cumin',
-        '2 tsp garlic powder'
+        'Salted cucumbers',
+        'Bibimbap dressing',
+        'Matchstick/grated carrots',
+        'Spinach',
+        'Shiitake mushrooms',
+        '1 tbsp canola oil'
       ],
-      equipment: ['Large pot', 'Timer'],
+      equipment: ['Large pan', 'Wok/skillet', 'Storage containers'],
       instructions: [
-        'Put cabbage sheet pan in oven (on lower rack, sweet potatoes on upper)',
-        'Set timer for 20 minutes (to flip cabbage)',
-        'Start black bean soup: In large pot, combine 4 cans black beans (with liquid), salsa verde, chopped green chiles, 2 tbsp cocoa powder, 2 tsp cumin, 2 tsp garlic powder',
-        'Bring to boil over high heat, cover, reduce to medium, simmer 7-10 minutes'
+        'Cucumber salad: Rinse salted cucumbers, squeeze dry. Toss with 2 tsp of the bibimbap dressing. Store in container, refrigerate',
+        'Carrots: Toss matchstick/grated carrots with 1 tbsp bibimbap dressing. Store in container, refrigerate',
+        'Spinach: Wash spinach, wilt in large pan over high heat (2-3 min). Press out excess water, toss with 1 tbsp bibimbap dressing. Store in container, refrigerate',
+        'Shiitakes: Heat wok/skillet with 1 tbsp canola oil over medium-high. Add shiitakes, let sit 1 min, then stir-fry 1-2 min until tender. Store in container, refrigerate'
       ],
       completed: false
     },
     {
       id: 'step-7',
       stepNumber: 7,
-      title: '2:50 PM - CABBAGE VINAIGRETTE & BEAN MASHING',
+      title: '3:05 PM - BLANCH GREEN BEANS',
       duration: '10 min',
       ingredients: [
-        '1 tbsp apple cider vinegar',
-        '½ tsp Dijon mustard',
-        '½ tsp salt',
-        '3 tbsp olive oil',
-        '½ cup chopped cilantro'
+        '1 lb green beans (cut into ½-inch lengths)',
+        'Salt'
       ],
-      equipment: ['Small bowl', 'Whisk', 'Immersion blender or potato masher'],
+      equipment: ['Large pot', 'Ice water bowl', 'Colander'],
       instructions: [
-        'Make vinaigrette: Whisk together 1 tbsp apple cider vinegar, ½ tsp Dijon, ½ tsp salt until dissolved; whisk in 3 tbsp olive oil',
-        'Check black beans: Test if they flatten easily; if yes, use immersion blender or potato masher to partially blend until thickened to your preference',
-        'Stir in ½ cup chopped cilantro, season with salt and pepper, turn off heat'
+        'Bring large pot of salted water to boil',
+        'Blanch green beans 2-3 min until bright green and crisp-tender',
+        'Drain, shock in ice water, drain again thoroughly',
+        'Pat dry, store in container, refrigerate'
       ],
       completed: false
     },
     {
       id: 'step-8',
       stepNumber: 8,
-      title: '3:00 PM - FLIP CABBAGE & CHECK SWEET POTATOES',
-      duration: '5 min',
-      ingredients: [],
-      equipment: ['Tongs or spatula', 'Timer'],
+      title: '3:15 PM - COOK TOFU',
+      duration: '10 min',
+      ingredients: [
+        'Marinated tofu',
+        '1 tbsp canola oil'
+      ],
+      equipment: ['Wok/skillet'],
       instructions: [
-        'Flip cabbage wedges (timer should go off)',
-        'Check sweet potatoes - should be getting tender. If not done, leave another 10 minutes',
-        'Set timer for 20 more minutes for cabbage to finish'
+        'Heat wok/skillet over medium-high with 1 tbsp canola oil',
+        'Remove tofu from marinade (save marinade)',
+        'Stir-fry tofu 3-5 min until lightly browned',
+        'Store in container with 2-3 tbsp reserved marinade, refrigerate'
       ],
       completed: false
     },
     {
       id: 'step-9',
       stepNumber: 9,
-      title: '3:05 PM - CHICKEN SOUP FINAL STEPS',
-      duration: '10 min',
+      title: '3:25 PM - FINISH FARRO',
+      duration: '15 min',
       ingredients: [
-        '½ cup pastina (Acini di Pepe or orzo, about 4 oz)',
-        '½ cup chopped parsley'
+        'Cooked farro',
+        'Reserved stock (1 cup if needed)',
+        'Parmesan',
+        'Parsley',
+        'Black pepper'
       ],
-      equipment: ['Bowl', 'Fork for shredding'],
+      equipment: ['Large skillet'],
       instructions: [
-        'Timer goes off - remove chicken breasts to bowl',
-        'Add ½ cup pastina to soup, increase heat to high until gentle boil',
-        'Cover, reduce to medium-low, cook according to package time (usually 5-7 minutes)',
-        'While pasta cooks: shred chicken with fork',
-        'Add shredded chicken and ½ cup chopped parsley to soup, stir, cover, simmer 2 minutes'
+        'After 50 min, check farro tenderness - some grains should be splaying',
+        'Remove lid, stir vigorously',
+        'If too much liquid: raise heat and cook down to sauce consistency',
+        'If too dry: add remaining 1 cup stock',
+        'Stir in Parmesan, parsley, pepper',
+        'Keep 2 cups farro separate for crispy grain dish later this week',
+        'Store remaining farro (about 4-5 cups) in large container for bowls/other meals'
       ],
       completed: false
     },
     {
       id: 'step-10',
       stepNumber: 10,
-      title: '3:15 PM - SOUP COMPLETE & SWEET POTATOES OUT',
+      title: '3:40 PM - SUNDAY DINNER: FARRO WITH MUSHROOMS',
       duration: '5 min',
       ingredients: [],
-      equipment: ['Knife', 'Storage containers'],
+      equipment: ['Serving plates'],
       instructions: [
-        'Remove sweet potatoes from oven (should be tender by now - total ~50 minutes)',
-        'Let cool, then cut into cubes/chunks - store half for tacos, half for tempeh salad'
+        'Serve the fresh farro with mushrooms while hot',
+        'This is your spotlight Sunday dinner - the earthy, rich flavors are perfect eaten immediately'
       ],
-      notes: ['Chicken soup is complete and ready to cool'],
+      notes: ['Optional Sunday evening task (10 min): Roast broccolini - toss with olive oil, salt, pepper; roast at 425°F for 12-15 min until crispy. OR save this for a weeknight when you want fresh vegetables'],
       completed: false
     },
     {
       id: 'step-11',
       stepNumber: 11,
-      title: '3:20 PM - CABBAGE FINISHES & ASSEMBLY FOR DINNER',
-      duration: '10 min',
-      ingredients: [
-        '⅓ cup walnuts',
-        '⅔ cup (3 oz) crumbled feta cheese',
-        'Lemon zest',
-        'Pomegranate seeds (optional)',
-        'Fresh herbs (optional)'
-      ],
-      equipment: ['Dry pan', 'Serving platter'],
+      title: '4:00 PM - DONE',
+      duration: '0 min',
+      ingredients: [],
+      equipment: [],
       instructions: [
-        'Remove cabbage from oven (should be tender and browned - total 40 minutes)',
-        'Toast walnuts briefly in dry pan (3-4 minutes)',
-        'Arrange cabbage on platter, drizzle with vinaigrette, top with feta, walnuts, lemon zest, pomegranate seeds, fresh herbs',
-        'Serve alongside simple grain or bread if desired'
+        'Your fridge now contains:',
+        '- 4-5 cups cooked farro',
+        '- Marinated tofu (cooked)',
+        '- Miso butter (double batch)',
+        '- Bibimbap dressing',
+        '- Blanched green beans',
+        '- Cucumbers with dressing',
+        '- Dressed carrots',
+        '- Cooked spinach',
+        '- Cooked shiitakes',
+        '- Arugula (washed)'
       ],
-      notes: ['Tonight\'s Spotlight Dinner: Roasted Red Cabbage with Walnuts and Feta'],
-      completed: false
-    },
-    {
-      id: 'step-12',
-      stepNumber: 12,
-      title: '3:30 PM - COOL & STORE COMPONENTS',
-      duration: '15 min',
-      ingredients: [
-        'Black bean soup',
-        'Chicken soup with pastina',
-        'Pickled onions',
-        'Sweet potato cubes',
-        'Extra cilantro'
-      ],
-      equipment: ['Storage containers', 'Small jar', 'Damp paper towel'],
-      instructions: [
-        'Let black bean soup cool, then portion into containers:',
-        '  - Main container: 6-7 cups (for soup dinners)',
-        '  - Separate container: 2-3 cups plain black beans (drained if too liquidy) for tacos',
-        'Store chicken soup (will keep 4-5 days)',
-        'Store pickled onions in small jar/container',
-        'Store sweet potato cubes in containers (separated for tacos vs salad)',
-        'Chop extra cilantro, store in damp paper towel in container'
-      ],
-      completed: false
-    },
-    {
-      id: 'step-13',
-      stepNumber: 13,
-      title: '3:45 PM - PREP TACO SALSA & CLEAN UP',
-      duration: '30 min',
-      ingredients: [
-        '2 roma tomatoes (optional)',
-        '¼ cup chopped cilantro',
-        'Lime juice'
-      ],
-      equipment: ['Small container', 'Knife'],
-      instructions: [
-        'Simple salsa for tacos: Dice 2 roma tomatoes (if you bought them) or use ½ cup of remaining salsa verde mixed with ¼ cup chopped cilantro and lime juice',
-        'Store in small container',
-        'Clean up kitchen, put away groceries'
-      ],
-      notes: ['4:15 PM - DONE! Enjoy Sunday dinner.'],
       completed: false
     }
   ],
@@ -368,129 +377,128 @@ export const mockPlan: MealPlan = {
     {
       id: 'meal-0',
       day: 'Sunday',
-      name: 'Roasted Red Cabbage with Walnuts and Feta',
+      name: 'Farro with Mushrooms',
       assemblyTime: 'Made during prep',
-      cookingMethod: 'Roasted',
-      components: ['Red cabbage', 'Cabbage vinaigrette'],
-      freshIngredients: ['Feta cheese', 'Walnuts', 'Lemon zest', 'Pomegranate seeds', 'Fresh herbs'],
+      cookingMethod: 'Stovetop (risotto-style)',
+      components: ['Farro', 'Dried porcini mushrooms', 'Fresh cremini mushrooms'],
+      freshIngredients: ['Parmesan', 'Fresh parsley', 'Fresh rosemary'],
       instructions: [
-        'Served warm from oven with vinaigrette, feta, walnuts, pomegranate',
-        'Serves: 6-8 as a side, 3-4 as a light main',
-        'This is your reward for the prep work - a beautiful, simple dish showcasing fall vegetables'
+        'Served warm from the stove with Parmesan, parsley, and black pepper',
+        'Serves: 4-6',
+        'This is your reward for the prep work - a beautiful, earthy dish showcasing fall grains and mushrooms'
       ],
       expanded: false
     },
     {
       id: 'meal-1',
       day: 'Monday',
-      name: 'Black Bean Soup Bowls',
-      assemblyTime: '10 min',
+      name: 'Miso Butter Gnocchi Bowl',
+      assemblyTime: '15 min',
       cookingMethod: 'Stovetop',
-      components: ['Spicy black bean soup', 'Pickled onions', 'Chopped cilantro'],
-      freshIngredients: ['Sour cream', 'Tortilla chips', 'Shredded cheddar', 'Lime wedges'],
+      components: ['Blanched green beans', 'Miso butter', 'Arugula'],
+      freshIngredients: ['Gnocchi (shelf-stable package)'],
       instructions: [
-        'Reheat black bean soup on stovetop (medium heat, 5-7 minutes, stirring occasionally)',
-        'Ladle into bowls',
-        'Top with: sour cream, pickled onions, fresh cilantro, tortilla chips, shredded cheddar, lime wedges',
-        'Serves: 3-4',
-        'Notes: This is the spotlight for the spicy black bean soup. Feel free to go heavy on toppings - that\'s where the fun is.'
+        'Heat 1 tbsp oil in large nonstick skillet over medium-high',
+        'Add gnocchi in even layer, cover, cook undisturbed 2-4 min until golden underneath',
+        'Add green beans and pinch of salt, cook stirring 2-3 min',
+        'Turn off heat, add half the miso butter in spoonfuls, stir until melted and glossy',
+        'Stir in arugula until wilted',
+        'Serve immediately',
+        'Serves: 2-3'
       ],
       expanded: false
     },
     {
       id: 'meal-2',
       day: 'Tuesday',
-      name: 'Pasta Aglio e Olio with Tuna',
-      assemblyTime: '20 min',
+      name: 'Bibimbap-Style Grain Bowl',
+      assemblyTime: '12 min',
       cookingMethod: 'Stovetop',
-      components: ['Pre-sliced garlic in olive oil', 'Arugula'],
-      freshIngredients: ['1 lb spaghetti', '2 cans tuna', '1 small lemon', 'Crushed red pepper', 'Olive oil'],
+      components: ['Farro', 'Tofu', 'Cucumbers', 'Carrots', 'Spinach', 'Shiitakes'],
+      freshIngredients: ['Eggs', 'Kochujang (optional)', 'Sesame seeds'],
       instructions: [
-        'Bring large pot of salted water to boil',
-        'In small bowl: combine tuna with lemon zest and juice of 1 small lemon; set aside',
-        'Cook 1 lb spaghetti (1 minute less than package directions for al dente); reserve 2 cups pasta water',
-        'Meanwhile, heat ¼ cup olive oil in large skillet over medium-low',
-        'Add pre-sliced garlic (6 cloves) and ½ tsp crushed red pepper; cook until fragrant and pale golden, 2-3 minutes',
-        'Remove from heat, add reserved pasta water, return to medium-high and simmer until reduced by half (4-6 minutes)',
-        'Add drained pasta, toss until al dente and glossy (1-2 minutes)',
-        'Remove from heat, stir in tuna and arugula (add in handfuls until wilted)',
-        'Season with salt, serve with olive oil drizzle and more red pepper',
-        'Serves: 4-6',
-        'Notes: The garlic is already sliced and stored in olive oil, so this comes together very quickly. Use oil-packed tuna if you have it.'
+        'Reheat 2 cups farro in microwave or in skillet with splash of water',
+        'Fry 2 eggs in nonstick skillet until whites set, yolks runny',
+        'Heat bowls, place warm farro in center',
+        'Arrange around farro: tofu, cucumbers, carrots, spinach, shiitakes (can use cold or quickly warm in microwave)',
+        'Top with fried egg, dollop of kochujang (optional), sesame seeds',
+        'Break egg into rice, mix everything together',
+        'Serves: 2'
       ],
       expanded: false
     },
     {
       id: 'meal-3',
       day: 'Wednesday',
-      name: 'Black Bean & Sweet Potato Tacos',
-      assemblyTime: '15 min',
-      cookingMethod: 'Stovetop',
-      components: ['Plain cooked black beans', 'Roasted sweet potato cubes', 'Pickled onions', 'Taco salsa', 'Chopped cilantro'],
-      freshIngredients: ['Corn or flour tortillas', 'Shredded cheddar', 'Sour cream', 'Avocado (optional)', 'Hot sauce', 'Lime wedges'],
+      name: 'Crispy Grains & Halloumi with Smashed Cucumbers',
+      assemblyTime: '18 min',
+      cookingMethod: 'Broiler',
+      components: ['Farro (2 cups)', 'Cucumbers'],
+      freshIngredients: ['Halloumi (8-9 oz)', 'Chickpeas (canned, drained)', 'Lime/lemon', 'Cilantro/herbs', 'Cumin', 'Olive oil'],
       instructions: [
-        'Warm tortillas in dry skillet or wrapped in foil in 350°F oven',
-        'Reheat black beans (stovetop, 3-4 minutes over medium heat)',
-        'Warm sweet potato cubes (stovetop in a bit of olive oil or microwave 1-2 minutes)',
-        'Assemble tacos: black beans, sweet potato, shredded cheddar, salsa, pickled onions, cilantro, sour cream',
-        'Optional: add sliced avocado, hot sauce, lime wedges',
-        'Serves: 3-4 (2-3 tacos per person)',
-        'Notes: These are vegetarian and filling. The sweet potato adds natural sweetness that balances the spicy beans.'
+        'Heat broiler on high, rack 6 inches from heat',
+        'On sheet pan: spread 2 cups farro, torn halloumi (8-9 oz), drained chickpeas',
+        'Pat everything dry with paper towel',
+        'Add 3 tbsp olive oil, 1 tsp cumin, salt, pepper - toss to coat',
+        'Broil 7-10 min, shaking pan occasionally, until chickpeas pop and everything is golden',
+        'Meanwhile, prepare cucumber topping: smash remaining cucumbers, chop into ½-inch pieces, add to bowl with finely grated lime/lemon zest (1 tsp), 3 tbsp citrus juice, cilantro/herbs, 1 tbsp olive oil',
+        'Top crispy grain mixture with cucumber salad and juices',
+        'Serves: 2-3'
       ],
       expanded: false
     },
     {
       id: 'meal-4',
       day: 'Thursday',
-      name: 'Chicken Soup with Pastina',
-      assemblyTime: '8 min',
-      cookingMethod: 'Stovetop',
-      components: ['Chicken soup with pastina'],
-      freshIngredients: ['Grated Parmesan', 'Crusty bread (optional)'],
+      name: 'Farro Bowl with Miso-Glazed Vegetables',
+      assemblyTime: '15 min',
+      cookingMethod: 'Stovetop + oven',
+      components: ['Farro', 'Tofu', 'Miso butter'],
+      freshIngredients: ['Broccolini', 'Optional: fried egg, arugula, sesame seeds'],
       instructions: [
-        'Reheat chicken soup in pot over medium heat until hot (5-7 minutes, stirring occasionally)',
-        'Ladle into bowls',
-        'Top generously with grated Parmesan',
-        'Serve with crusty bread if desired',
-        'Serves: 6',
-        'Notes: This is Italian comfort food at its simplest. The pastina makes it incredibly satisfying. Great for when you\'re tired or feeling under the weather.'
+        'Preheat oven to 425°F',
+        'Toss broccolini (or any extra vegetables) with 1 tbsp oil, salt, pepper',
+        'Roast 12-15 min until crispy at edges',
+        'Meanwhile, reheat 2 cups farro in skillet with splash of water',
+        'Warm tofu in same skillet',
+        'Assemble bowls: farro base, tofu, roasted broccolini',
+        'Top with spoonful of miso butter, let melt over hot vegetables',
+        'Optional: fried egg, arugula, sesame seeds',
+        'Serves: 2'
       ],
       expanded: false
     },
     {
       id: 'meal-5',
       day: 'Friday',
-      name: 'Smoky Tempeh & Roasted Sweet Potato Salad',
-      assemblyTime: '20 min',
-      cookingMethod: 'Stovetop for tempeh, assemble bowl',
-      components: ['Roasted sweet potato cubes', 'Mixed salad greens', 'Pickled onions (optional)'],
-      freshIngredients: ['1 package smoky tempeh (8 oz)', '½ cup mixed nuts', 'Apple cider vinegar', 'Dijon mustard', 'Olive oil'],
+      name: 'Quick Mushroom Farro Bowl',
+      assemblyTime: '10 min',
+      cookingMethod: 'Stovetop',
+      components: ['Farro', 'Green beans', 'Miso butter or Parmesan'],
+      freshIngredients: ['Extra cremini mushrooms (optional)', 'Arugula', 'Optional: fried egg'],
       instructions: [
-        'Cut tempeh into ½-inch cubes',
-        'Heat 2 tbsp olive oil in skillet over medium-high',
-        'Add tempeh, cook until browned and crispy on all sides (8-10 minutes total)',
-        'While tempeh cooks: toast mixed nuts in dry pan (3-4 minutes)',
-        'Make quick vinaigrette: whisk 2 tbsp apple cider vinegar, 1 tsp Dijon, pinch salt, then whisk in 4 tbsp olive oil',
-        'Assemble salad: bed of mixed greens, roasted sweet potato cubes (reheated in microwave 1 minute), crispy tempeh, toasted nuts',
-        'Drizzle with vinaigrette, top with pickled onions if desired',
-        'Serves: 2-3',
-        'Notes: This is hearty enough for dinner. The smoky tempeh from the package gives great flavor with minimal effort. If you want to make it more substantial, add a grain like farro or quinoa.'
+        'Heat 1 tbsp oil in skillet over medium-high',
+        'If you have extra cremini mushrooms: slice and sauté 3-4 min until golden',
+        'Add 2 cups farro, green beans, splash of stock or water',
+        'Warm through, 3-4 min',
+        'Finish with spoonful of miso butter or knob of regular butter, Parmesan, black pepper',
+        'Top with arugula, optional fried egg',
+        'Serves: 2'
       ],
       expanded: false
     },
     {
       id: 'meal-6',
       day: 'Saturday',
-      name: 'Leftover Remix Night',
+      name: 'Flex Night',
       assemblyTime: '10-15 min',
       cookingMethod: 'Freestyle',
       components: ['Any remaining components'],
       freshIngredients: ['Whatever looks good in your fridge'],
       instructions: [
-        'Black bean quesadillas: Use remaining black beans, cheddar, tortillas. Cook in skillet until crispy, serve with salsa and sour cream',
-        'Taco salad: Layer salad greens, black beans, sweet potato, cheese, pickled onions, crush some tortilla chips on top',
-        'Chicken soup over rice: If you have leftover rice or want to cook some fresh, serve the soup over it for a different texture',
-        'Pasta aglio e olio remix: If you have leftover pasta, reheat and toss with any remaining chicken, vegetables, or make it a cold pasta salad',
+        'Option 1: Gnocchi + Greens Variation - Pan-fry gnocchi, toss with any remaining vegetables, miso butter, top with fried egg',
+        'Option 2: Grain Bowl Remix - Use remaining farro with any leftover tofu, vegetables, and dressings',
+        'Option 3: Order in or eat out - you\'ve earned it!',
         'Notes: This is your creative night. Mix and match components based on what you have left and what sounds good.'
       ],
       expanded: false
@@ -501,66 +509,78 @@ export const mockPlan: MealPlan = {
       id: 'note-1',
       title: 'Component Inventory After Sunday Prep',
       content: [
-        'Chicken soup with pastina (6-7 cups) - Refrigerate 4-5 days',
-        'Spicy black bean soup (6-7 cups) - Refrigerate 3-4 days',
-        'Plain cooked black beans (2-3 cups) - Refrigerate 4-5 days',
-        'Roasted sweet potato cubes (3-4 cups total, divided) - Refrigerate 4-5 days',
-        'Pickled red onions with lime & cilantro (1 cup) - Refrigerate 7-10 days',
-        'Chopped fresh cilantro (½ cup) - Refrigerate 3-4 days in damp paper towel',
-        'Sliced garlic in olive oil (6 cloves) - Refrigerate 3-4 days',
-        'Taco salsa - Refrigerate 3-4 days',
-        'Cabbage vinaigrette (if extra made) - Refrigerate 7+ days'
+        'Cooked farro (4-5 cups) - Large airtight container, 5 days',
+        'Marinated tofu (cooked, ¾ lb) - Container with marinade, 4-5 days',
+        'Eggs (4, raw) - For fresh frying, 2+ weeks',
+        'Halloumi (8-9 oz, raw) - Original packaging, 1 week+',
+        'Blanched green beans (1 lb) - Airtight container, 4-5 days',
+        'Cucumbers with dressing - Container, 3-4 days (best used early week)',
+        'Dressed carrots - Container, 5 days',
+        'Cooked spinach - Container, 3-4 days',
+        'Cooked shiitakes - Container, 4-5 days',
+        'Arugula (washed) - Container with paper towel, 3-4 days',
+        'Raw broccolini (if not roasted Sunday) - Produce bag, 5 days',
+        'Miso butter (double batch) - Small container, 1 week+',
+        'Bibimbap dressing (remaining) - Jar, 1 week+',
+        'Chickpeas (canned, drained) - Store in can or container, 3-4 days'
       ]
     },
     {
       id: 'note-2',
-      title: 'Storage Tips',
+      title: 'Component Longevity Guide',
       content: [
-        'Use larger containers (quart-sized) for soups to make reheating easier',
-        'Keep pickled onions in a glass jar if possible - they\'ll last longer and won\'t absorb plastic flavors',
-        'Store cilantro upright in a glass with water (like flowers) in the fridge, covered loosely with a plastic bag',
-        'Sweet potatoes can dry out, so store in airtight containers',
-        'Arugula - keep in original clamshell or container with paper towel (use earlier in week)'
+        'Use early in week (Days 1-3): Cucumbers with dressing, Arugula, Cooked spinach',
+        'Use any time (Days 1-5): Farro, Tofu, Green beans, Carrots, Shiitakes, Miso butter, Bibimbap dressing',
+        'Pantry stable: Gnocchi, Chickpeas (canned), Halloumi (stays fresh wrapped)'
       ]
     },
     {
       id: 'note-3',
       title: 'Leftover Strategy',
       content: [
-        'Lunches: Chicken soup and black bean soup are both excellent for lunch. Portion into single-serve containers Sunday night.',
-        'Grain bowls: If you want grain bowl lunches, cook a batch of rice, farro, or quinoa Monday night (takes 20-30 minutes) and use throughout the week with any combination of beans, sweet potato, pickled onions, and salad greens.',
-        'Taco fixings: Extra black beans, sweet potato, and cheese can become quick quesadillas, nachos, or taco salads.',
-        'Double the pickled onions: They last 7-10 days and are great on everything',
-        'Toast nuts in batches: While you have the pan out, toast extra nuts for snacking or future salads'
+        'Lunches: Pack farro bowls with any combination of tofu, vegetables, and dressings. They reheat well or can be eaten cold as grain salads.',
+        'Breakfast: Fry an egg, serve over warm farro with arugula and miso butter',
+        'Snacks: Crispy chickpeas from Wednesday\'s recipe are great cold',
+        'The miso butter is incredibly versatile - use it on any grain, vegetable, or protein combination',
+        'If you get tired of farro, swap in rice or other cooked grains mid-week',
+        'The bibimbap-style bowl can accommodate any vegetables you have on hand',
+        'Fried eggs elevate any meal and cook in 3 minutes'
       ]
     },
     {
       id: 'note-4',
-      title: 'Flexibility Suggestions',
+      title: 'Fresh vs. Prepped Components',
       content: [
-        'Swap arugula: If arugula isn\'t available or you don\'t like the peppery taste, use baby spinach or mixed greens in the pasta',
-        'Sweet potato alternatives: Butternut squash or regular white potatoes can substitute, though cooking times may vary',
-        'Tempeh substitution: If you can\'t find smoky tempeh, use plain tempeh and add smoked paprika or liquid smoke. Or substitute with crispy tofu or chickpeas',
-        'Spice level: The black bean soup is meant to be mildly spicy. Adjust with hot sauce or fresh chiles to your preference',
-        'Seasonal notes: Red cabbage and sweet potatoes are fall/winter staples. If pomegranate seeds are unavailable or expensive, substitute with dried cranberries or skip.'
+        'Prep fresh for best results: Eggs (fry right before serving), Gnocchi (cook once, don\'t reheat), Halloumi (crisp right before eating), Delicate herbs for garnish',
+        'Use prepped components: All grains, vegetables, tofu - they reheat beautifully. Sauces and dressings - flavors deepen over time. Blanched vegetables - just need quick reheating.'
       ]
     },
     {
       id: 'note-5',
-      title: 'What to Prep Fresh vs. Use Components',
+      title: 'Vegetable Substitution Notes',
       content: [
-        'Prep fresh (day-of): Pasta (Tuesday), Tempeh frying (Friday), Avocado slicing (whenever using), Fresh herb garnishes (though some pre-chopped cilantro is fine)',
-        'Use components: Everything else! That\'s the beauty of this system.',
-        'Total Estimated Cooking Time Throughout Week: Sunday prep: 2 hours 15 minutes (includes Sunday dinner), Weeknight cooking: 10-20 minutes per night, Total active cooking time: ~3.5-4 hours for entire week'
+        'Green beans work perfectly with miso butter - they\'re sturdy, in season, and have great texture',
+        'Broccolini roasts beautifully and pairs well with Asian flavors',
+        'If you want asparagus anyway: it\'ll work in any of these recipes, just know you\'re paying a premium',
+        'Other great fall/winter alternatives: Brussels sprouts (halved and roasted), lacinato kale (massaged), snap peas, or even roasted delicata squash',
+        'The miso butter is the real MVP here - it makes any vegetable taste incredible'
       ]
     },
     {
       id: 'note-6',
       title: 'Recipe Rotation Tracking',
       content: [
-        'NEW recipes this week: Spicy Black Bean Soup (Ali Slagle, NYT), Pasta Aglio e Olio with Tuna (Sheela Prakash, NYT), Red Cabbage with Walnuts and Feta (Melissa Clark, NYT), Brodo di Pollo con Pastina (Naz Deravian, NYT), Black Bean & Sweet Potato Tacos (custom), Smoky Tempeh & Sweet Potato Salad (custom)',
-        'All six recipes are new this week - great variety to start your meal prep system!',
-        'Component Reuse: Black beans: Used in soup (Monday) and tacos (Wednesday), Sweet potatoes: Used in tacos (Wednesday) and tempeh salad (Friday), Pickled onions: Used across multiple meals as garnish, Fresh cilantro: Used across multiple dishes throughout week'
+        'NEW this week: Farro with Mushrooms (Sunday spotlight dinner), Bibimbap-style bowl (Tuesday), Crispy Grains & Halloumi (Wednesday), Skillet Gnocchi with Miso Butter (Monday, adapted with green beans)',
+        'Repeat/familiar: None - this is a fresh rotation'
+      ]
+    },
+    {
+      id: 'note-7',
+      title: 'Time-Saving Tips for Next Time',
+      content: [
+        'Farro batch cooking: Next time you prep farro, consider cooking 6+ cups and freezing half in 2-cup portions. Farro freezes beautifully and thaws quickly.',
+        'Miso butter: The double batch will last beyond this week. You can keep making it in quantity.',
+        'Tofu marinade: This same marinade works for tempeh, mushrooms, or even vegetables. Make extra and keep in the fridge.'
       ]
     }
   ]
